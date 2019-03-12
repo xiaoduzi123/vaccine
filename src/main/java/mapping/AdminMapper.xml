@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dao.AdminDao">
+    <resultMap id="adminInfo" type="entity.Admin">
+        <result column="id" property="id" jdbcType="int"/>
+        <result column="adminName" property="adminName" jdbcType="String"/>
+        <result column="career" property="career" jdbcType="String"/>
+        <result column="adminPassword" property="adminPassword" jdbcType="String"/>
+        <result column="adminPhone" property="adminPhone" jdbcType="String"/>
+    </resultMap>
+    <!-- 登录 ，输入用户名和密码 返回一个对象-->
+    <!-- 映射关系？？？ -->
+    <select id="login" parameterType="String[]" resultMap="adminInfo" >
+   		select * from vaccine
+   		where adminName=#{adminName} and adminPassword=#{adminPassword}
+    </select>
+    <!-- <select id="login" resultMap="BaseResultMap" >
+    	select
+    	<include refid="Base_Column_List"/>
+    	from admin
+    	where id = #{id,jdbcType=INTEGER}
+    </select> -->
+    <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap"
+        parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List" />
+        from tb_user
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+ 
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from
+        tb_user
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+ 
+    <insert id="insert" parameterType="com.sgcc.user.pojo.User">
+        insert into tb_user (id,
+        user_name, password,
+        age)
+        values (#{id,jdbcType=INTEGER},
+        #{userName,jdbcType=VARCHAR},
+        #{password,jdbcType=VARCHAR},
+        #{age,jdbcType=INTEGER})
+    </insert>
+ 
+    <insert id="insertSelective" parameterType="com.sgcc.user.pojo.User">
+        insert into tb_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="age != null">
+                age,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null">
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                #{age,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+ 
+    <update id="updateByPrimaryKeySelective" parameterType="com.sgcc.user.pojo.User">
+        update tb_user
+        <set>
+            <if test="userName != null">
+                user_name = #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="age != null">
+                age = #{age,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+ 
+    <update id="updateByPrimaryKey" parameterType="com.sgcc.user.pojo.User">
+        update tb_user
+        set
+        user_name = #{userName,jdbcType=VARCHAR},
+        password =
+        #{password,jdbcType=VARCHAR},
+        age = #{age,jdbcType=INTEGER}
+        where id =
+        #{id,jdbcType=INTEGER}
+    </update> -->
+</mapper>

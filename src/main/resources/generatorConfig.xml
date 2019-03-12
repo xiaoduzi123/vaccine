@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/vaccine?serverTimezone=UTC&amp;useSSL=false&amp;nullCatalogMeansCurrent=true" 
+    driverClass="com.mysql.cj.jdbc.Driver" password="123456dl" userId="root" />
+    <javaModelGenerator targetPackage="entity" targetProject="vaccine" />
+   <!--  <sqlMapGenerator targetPackage="sqlmapping" targetProject="GeneratorMySQL" />
+    <javaClientGenerator targetPackage="client" targetProject="GeneratorMySQL" type="XMLMAPPER" /> -->
+    <table schema="vaccine" tableName="admin"></table>
+    <table schema="vaccine" tableName="check"></table>
+    <table schema="vaccine" tableName="client"></table>
+    <table schema="vaccine" tableName="material"></table>
+    <table schema="vaccine" tableName="order"></table>
+    <table schema="vaccine" tableName="orderplan"></table>
+    <table schema="vaccine" tableName="produce"></table>
+    <table schema="vaccine" tableName="vaccine"></table>
+    <table schema="vaccine" tableName="vaccinein"></table>
+  </context>
+</generatorConfiguration>
